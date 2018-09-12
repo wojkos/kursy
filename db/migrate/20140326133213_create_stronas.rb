@@ -1,4 +1,4 @@
-class CreateStronas < ActiveRecord::Migration
+class CreateStronas < ActiveRecord::Migration[5.1]
   def up
     create_table :stronas do |t|
     	t.integer "kategorie_id"

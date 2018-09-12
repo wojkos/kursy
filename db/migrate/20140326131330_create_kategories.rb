@@ -1,4 +1,4 @@
-class CreateKategories < ActiveRecord::Migration
+class CreateKategories < ActiveRecord::Migration[5.1]
   def up
     create_table :kategories do |t|
     	t.string "nazwa"

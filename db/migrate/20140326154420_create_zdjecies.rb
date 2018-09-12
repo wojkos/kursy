@@ -1,4 +1,4 @@
-class CreateZdjecies < ActiveRecord::Migration
+class CreateZdjecies < ActiveRecord::Migration[5.1]
   def up
     create_table :zdjecies do |t|
     	t.integer "galerie_id"

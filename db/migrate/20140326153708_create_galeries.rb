@@ -1,4 +1,4 @@
-class CreateGaleries < ActiveRecord::Migration
+class CreateGaleries < ActiveRecord::Migration[5.1]
   def up
     create_table :galeries do |t|
     	t.string "nazwa"

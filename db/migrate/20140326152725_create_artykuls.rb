@@ -1,4 +1,4 @@
-class CreateArtykuls < ActiveRecord::Migration
+class CreateArtykuls < ActiveRecord::Migration[5.1]
   def up
     create_table :artykuls do |t|
     	t.integer "strona_id"

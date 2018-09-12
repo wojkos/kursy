@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Kursy
+    = stylesheet_link_tag('application', :media => 'all' )
+    = javascript_include_tag('application')
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+  %body
+    / menu
+    .navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand.logob{:href => "http://www.strefakursow.pl"}
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              =link_to('Kategorie', '/kategories')
+            %li
+              %a{:href => "/galeries"} Galerie
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Użytkownicy
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to("Użytkownicy", '/uzytkowniks')
+                %li.divider
+                %li
+                  %a{:href => "/dostep/logout"} Wyloguj
+    .container
+      - if !flash[:notice].blank?
+        .alert.alert-success{:style => "text-align: center;"}
+          = flash[:notice]
+      = yield
+    %div{:style => "text-align: center;"}
+      = image_tag('logo_ror.png', :size =>'120x120', :alt => 'Kurs Ruby on Rails',)
+    #footer
+      .container
+        %p.text-muted
+          StrefaKursów 2014 ©
+          %a{:href => "http://www.strefakursow.pl", :target => "_blank"} http://www.strefakursow.pl
